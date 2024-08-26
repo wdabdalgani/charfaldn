@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"> 
+    <title> CHARFADINE    FACTURE </title>
+</head>
+<body>
+    <div class="continer" id="pts">
+    <div class="box">
+        <div class="img-log">
+            <!-- #region -->
+            <img src="img/3.png" alt="">   
+            <!-- #region -->   
+        </div>
+        <div class="title">
+            <h1>ETS. CHARFADINE</h1>
+            <h2>Pour tous vos matériels électroniques </h2>
+            <div class="tel">
+                <span>Tel: 66298746/99298746/66337227</span>
+                 
+            </div>
+            <div class="location">
+                Abéché -Tchad
+            </div>
+            <div class="location">
+                N° de compte ECOBANK ABECHE: 32500000015
+            </div>
+        </div>
+        <div class="img-log">
+            <!-- #region -->
+            <img src="img/IMG-20240701-WA0047.jpg" alt="">   
+            <!-- #region -->   
+        </div>
+        
+    </div>
+    
+    <div class="facture">
+        <span>Facture N° <b id="num_facture_a"></b> /2024</span>
+        </div>
+       <div class="headfac">
+    <h2 id="">Nom de client :  <span id="name_claine"> </span></h2>
+    <h2 >  data  :  <span id="data_fact"> </span></h2>
+    </div>
+    <div class="table">
+        <table>
+            <tr >
+                <td class="H_table">N°</td>
+                <td class="H_table">Designation </td>
+                <td class="H_table">Q</td>
+                <td class="H_table">p.u</td>
+                <td class="H_table">p.t</td>
+            </tr>
+            <tbody id="main_data_show">
+                <tr >
+                    <td class="B_table">1</td>
+                    <td id="line_one_DESIGNATION" class="B_table"></td>
+                    <td class="B_table"></td>
+                    <td class="B_table"></td>
+                    <td class="B_table"></td>
+                </tr>
+            </tbody>
+            <tr >
+                <td class="H_table1"></td>
+                <td class="H_table1">TOtal </td>
+                <td class="H_table1"> </td>
+                <td class="H_table1"> </td>
+                <td id="total_all" class="H_table1">0 F</td>
+            </tr>
+        </table>
+        <div class="total_all_montant">
+        </div>
+        <h3 >Le montant total   :  <b id="total_all_montant"></b> <span>F</span></h3>
+    </div>
+    <div class="center">
+        <div class="coni">
+            <h3>le directur general </h3>
+            <h3>Saad Adam CHARFADINE</h3>
+        </div>
+        <div class="cahi">
+            <img  src="img/chai.png" alt="">
+        </div>
+    </div>
+    
+    </div>
+    <div class="body-item">
+        <div class="main_data">
+        <img src="img/IMG-20240701-WA0047.jpg" alt="">
+        
+            <div class="edit">
+                <a href="">
+                    <input  type="submit"  onclick="NewFacture()" id="NewFacture" value=" + Nouvelle Facture     ">
+                </a>    
+            </div>
+            <input type="text" id="C_name" placeholder="  Nom de client :    " required="required">
+            <input type="text" id="C_num" placeholder="Numero de le  Facture " required="required">
+            <input type="text" id="C_data" placeholder="  Date" required="required">
+            <input  type="submit"  onclick="maindata()" id="mainData" value=" ajout  +  ">
+        </div>
+        <!-- <input class="submit" class="btn-1" id="savePdf" type="button" value="حفظ كملف pdf"> -->
+        <button id="download" > Fichier  PDF</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script>
+        document.getElementById('download').addEventListener('click', function() {
+            var element = document.querySelector('.continer');
+            var opt = {
+                margin:       0.1,
+                filename:     'myfile.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+            html2pdf().from(element).set(opt).save();
+        });
+    </script>
+            <h2  >      FACTURE Designation </h2>
+            <h4 class="msg" id="msg"> </h4>
+            <input id="Num_fucture" type="text" name="" placeholder=" قم بإدخال رقم الفاتورة مرة واحدة فقط  ">
+            <input id="Description" type="text" name="" placeholder=" Designation ">
+            <input id="count" type="text" name="" placeholder="QUANTITE " required="required">
+            <input id="prix_one" type="text" name="" placeholder="Prix    " required="required">
+            <input id="data_fucture" type="text" name="" placeholder="قم بإدخال رقم الفاتورة مرة واحدة فقط ">
+            <input  id="submit"  class="btn" type="button" value="  CONFIRMATION ">
+        </div>
+    <div class="showdata" id="showdata">
+    <div id="deleteall">
+    </div>
+        <table>
+            <tr>
+                <th>ID</td>
+                <th> Description</td>
+                <th>Q Count Number</td>
+                <th>prix one</td>
+                <th> other    </td>
+            </tr>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    </div>
+    <script src="javaScript/main.js">
+    </script>
+</body>
+</html>
