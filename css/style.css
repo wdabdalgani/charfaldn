@@ -8,20 +8,22 @@ body{
 }
 .continer{
     width: 100%;
-    height: 100vh;
+    height: auto;
     padding: 5px 1px;
     padding-bottom: 30px;
     background-color: white;
     
 }
 .box{
-    
+    width: 100%;
     display: flex;
     justify-content: space-around;
     margin: auto;
-    height: 177px;
+    
     padding-bottom:10px;
-    overflow-y: hidden;
+    height: auto;
+    overflow-x: scroll;
+   
 }
 .box .img-log img{
 width: 150px;
